@@ -1,4 +1,4 @@
-package com.homework.session23;
+package com.homework.rockband_song_manager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

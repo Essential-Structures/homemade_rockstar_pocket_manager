@@ -1,4 +1,4 @@
-package com.homework.session23.models.DTOs;
+package com.homework.rockband_song_manager.models.DTOs;
 
 import lombok.Data;
 import java.util.Date;

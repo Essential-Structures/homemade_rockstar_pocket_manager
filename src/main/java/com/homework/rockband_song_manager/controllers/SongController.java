@@ -1,13 +1,11 @@
-package com.homework.session23.controllers;
+package com.homework.rockband_song_manager.controllers;
 
-import com.homework.session23.models.DTOs.SongDTO;
-import com.homework.session23.services.SongServiceable;
+import com.homework.rockband_song_manager.models.DTOs.SongDTO;
+import com.homework.rockband_song_manager.services.SongServiceable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RequestMapping("/songs_api/")
 @RestController

@@ -1,14 +1,14 @@
-package com.homework.session23;
+package com.homework.rockband_song_manager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Session23Application {
+public class RockbandSongManager {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(Session23Application.class, args);
+		SpringApplication.run(RockbandSongManager.class, args);
 	}
 
 }

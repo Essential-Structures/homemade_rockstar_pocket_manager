@@ -1,4 +1,4 @@
-package com.homework.session23.models.entitties;
+package com.homework.rockband_song_manager.models.entitties;
 
 import jakarta.persistence.*;
 import lombok.Data;
