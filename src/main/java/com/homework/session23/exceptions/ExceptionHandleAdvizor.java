@@ -24,7 +24,10 @@ public class ExceptionHandleAdvizor {
     //method to handle invalidInputData exceptions
     @ExceptionHandler(InvalidInputDataException.class)
     public ResponseEntity<String> invalidInputDataException(InvalidInputDataException invalidInputDataException) {
-        return new ResponseEntity<>(objectToString(Map.of("key",invalidInputDataException.getMessage())), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(
+                objectToString(Map.of("Invalid input data: ", invalidInputDataException.getMessage())),
+                    HttpStatus.BAD_REQUEST
+        );
     }
 
     //convert exception to String, to display
@@ -34,6 +37,7 @@ public class ExceptionHandleAdvizor {
         } catch (JsonProcessingException e) {
             log.info("Error processing the response object into a string");
             return ("Internal error");
+
         }
 
 
