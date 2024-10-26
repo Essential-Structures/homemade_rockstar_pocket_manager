@@ -7,21 +7,29 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/songs_api/")
+import java.util.List;
+
+@RequestMapping("/api/songs")
 @RestController
 public class SongController {
 
     @Autowired
-    private SongServiceable songService;
+    private final SongServiceable songService;
+
+    public SongController(SongServiceable songService) {
+        this.songService = songService;
+    }
 
     @PostMapping
     public ResponseEntity<SongDTO> persistSongsMetadata(@RequestBody SongDTO songToPersist) {
-        return new ResponseEntity<> (songService.saveSong(songToPersist), HttpStatus.OK);
+        return new ResponseEntity<>(songService.saveSong(songToPersist), HttpStatus.OK);
     }
 
     @GetMapping("{songName}")
-    public ResponseEntity<SongDTO> retrieveSongByName (@RequestParam
-                                                       String songName){
-        return ResponseEntity<SongDTO> (songService.retrieveSongByName, HttpStatus.OK)
+    public ResponseEntity<List<SongDTO>> retrieveSongBySpecs(
+            @RequestParam(value = "songName", required = false) String songName,
+            @RequestParam(value = "yearOfRelease", required = false) Short yearOfRelease){
+
+        return ResponseEntity.ok(songService.getSongsByCriteria(songName, yearOfRelease));
     }
 }

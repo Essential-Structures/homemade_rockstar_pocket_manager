@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RockbandSongManager {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(RockbandSongManager.class, args);
-	}
+        SpringApplication.run(RockbandSongManager.class, args);
+    }
 
 }
