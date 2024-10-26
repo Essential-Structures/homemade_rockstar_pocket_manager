@@ -1,7 +1,8 @@
 package com.homework.rockband_song_manager.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.homework.rockband_song_manager.data_filters.SongSpecifictions;
+import com.homework.rockband_song_manager.data_filters.SongSpecifications;
+import com.homework.rockband_song_manager.exceptions.SongUnpersistException;
 import com.homework.rockband_song_manager.models.DTOs.SongDTO;
 import com.homework.rockband_song_manager.models.entitties.SongEntitty;
 import com.homework.rockband_song_manager.repository.SongRepository;
@@ -35,8 +36,8 @@ public class SongServiceImpl implements SongServiceable {
     @Override
     public List<SongDTO> getSongsByCriteria(String title, Short yearOfRelease) {
         Specification<SongEntitty> specs = Specification.
-                where(SongSpecifictions.titleSearch(title)).
-                and(SongSpecifictions.yearOfReleaseSearch(yearOfRelease));
+                where(SongSpecifications.titleSearch(title)).
+                and(SongSpecifications.yearOfReleaseSearch(yearOfRelease));
 
         List<SongEntitty> songsByCriteria = repository.findAll(specs);
         log.info("Retrieved list of entries from database picked by criteria");
@@ -44,5 +45,14 @@ public class SongServiceImpl implements SongServiceable {
         return songsByCriteria.stream().
                 map(songEntitty -> objectMapper.convertValue(songEntitty, SongDTO.class))
                 .toList();
+    }
+
+    @Override
+    public void deleteSongById(Short id) {
+        repository.findById(id).orElseThrow(
+                ()->new SongUnpersistException("Song with id "+id+" set to delete not found in database"));
+
+        repository.deleteById(id);
+        log.info("Successfully deleted song with id {}",id);
     }
 }

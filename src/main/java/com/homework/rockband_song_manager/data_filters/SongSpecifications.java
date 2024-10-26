@@ -1,10 +1,9 @@
 package com.homework.rockband_song_manager.data_filters;
 
-import com.homework.rockband_song_manager.models.DTOs.SongDTO;
 import com.homework.rockband_song_manager.models.entitties.SongEntitty;
 import org.springframework.data.jpa.domain.Specification;
 
-public class SongSpecifictions {
+public class SongSpecifications {
 
     public static Specification<SongEntitty> titleSearch (String titleName){
         return (root, query, criteriaBuilder)-> (titleName == null ? null :

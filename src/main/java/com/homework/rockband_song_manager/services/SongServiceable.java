@@ -9,4 +9,6 @@ public interface SongServiceable {
     SongDTO saveSong(SongDTO songToPersist);
 
     List<SongDTO> getSongsByCriteria(String title, Short yearOfRelease);
+
+    void deleteSongById (Short id);
 }

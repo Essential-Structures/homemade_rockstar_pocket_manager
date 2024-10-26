@@ -28,6 +28,15 @@ public class ExceptionHandleAdvizor {
                 objectToString(Map.of("Invalid input data: ", invalidInputDataException.getMessage())),
                     HttpStatus.BAD_REQUEST
         );
+
+    }
+
+    //method to handle song not found exceptions
+    @ExceptionHandler(SongUnpersistException.class)
+    public ResponseEntity<String> songUnpersistException(SongUnpersistException songUnpersistException) {
+        return new ResponseEntity<>(
+                objectToString(Map.of("Invalid input data: ", songUnpersistException.getMessage())),
+                HttpStatus.NOT_FOUND);
     }
 
     //convert exception to String, to display

@@ -32,4 +32,10 @@ public class SongController {
 
         return ResponseEntity.ok(songService.getSongsByCriteria(songName, yearOfRelease));
     }
+
+    @DeleteMapping ("/{ID}")
+    public void deleteSongbyId (@RequestParam(value = "ID") Short ID){
+
+
+    }
 }
