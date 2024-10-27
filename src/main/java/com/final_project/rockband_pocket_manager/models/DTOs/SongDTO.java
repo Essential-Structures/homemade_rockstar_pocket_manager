@@ -1,4 +1,4 @@
-package com.homework.rockband_song_manager.models.DTOs;
+package com.final_project.rockband_pocket_manager.models.DTOs;
 
 import lombok.Data;
 

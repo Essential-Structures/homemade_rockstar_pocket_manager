@@ -1,7 +1,6 @@
-package com.homework.rockband_song_manager.services;
+package com.final_project.rockband_pocket_manager.services;
 
-import com.homework.rockband_song_manager.models.DTOs.SongDTO;
-import com.homework.rockband_song_manager.models.DTOs.SongNameDTO;
+import com.final_project.rockband_pocket_manager.models.DTOs.SongDTO;
 
 import java.util.List;
 

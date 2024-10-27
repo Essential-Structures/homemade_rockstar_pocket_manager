@@ -8,10 +8,10 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.final_projectk</groupId>
+	<groupId>com.final_project</groupId>
 	<artifactId>rockband_pocket_manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>session23</name>
+	<name>rockband_pocket_manager</name>
 	<description>rockband_pocket_manager exam project</description>
 	<url/>
 	<licenses>
@@ -66,6 +66,25 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.2.220</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>sendgrid-java</artifactId>
+			<version>4.7.2</version>
 		</dependency>
 
 	</dependencies>

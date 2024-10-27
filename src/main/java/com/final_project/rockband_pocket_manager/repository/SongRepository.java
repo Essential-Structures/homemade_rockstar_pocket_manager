@@ -1,6 +1,6 @@
-package com.homework.rockband_song_manager.repository;
+package com.final_project.rockband_pocket_manager.repository;
 
-import com.homework.rockband_song_manager.models.entitties.SongEntitty;
+import com.final_project.rockband_pocket_manager.models.entitties.SongEntitty;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;

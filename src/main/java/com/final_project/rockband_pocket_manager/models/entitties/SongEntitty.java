@@ -1,4 +1,4 @@
-package com.homework.rockband_song_manager.models.entitties;
+package com.final_project.rockband_pocket_manager.models.entitties;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

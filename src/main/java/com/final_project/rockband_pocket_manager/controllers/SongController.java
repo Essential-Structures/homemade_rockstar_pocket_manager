@@ -1,8 +1,8 @@
-package com.homework.rockband_song_manager.controllers;
+package com.final_project.rockband_pocket_manager.controllers;
 
-import com.homework.rockband_song_manager.models.DTOs.SongDTO;
-import com.homework.rockband_song_manager.models.DTOs.SongNameDTO;
-import com.homework.rockband_song_manager.services.SongServiceable;
+import com.final_project.rockband_pocket_manager.models.DTOs.SongDTO;
+import com.final_project.rockband_pocket_manager.models.DTOs.SongNameDTO;
+import com.final_project.rockband_pocket_manager.services.SongServiceable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

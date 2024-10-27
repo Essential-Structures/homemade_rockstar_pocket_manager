@@ -1,4 +1,4 @@
-package com.homework.rockband_song_manager;
+package com.final_project.rockband_pocket_manager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package com.homework.rockband_song_manager.data_filters;
+package com.final_project.rockband_pocket_manager.data_filters;
 
-import com.homework.rockband_song_manager.models.entitties.SongEntitty;
+import com.final_project.rockband_pocket_manager.models.entitties.SongEntitty;
 import org.springframework.data.jpa.domain.Specification;
 
 public class SongSpecifications {

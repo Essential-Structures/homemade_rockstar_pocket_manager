@@ -1,11 +1,11 @@
-package com.homework.rockband_song_manager.services;
+package com.final_project.rockband_pocket_manager.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.homework.rockband_song_manager.data_filters.SongSpecifications;
-import com.homework.rockband_song_manager.exceptions.SongNotFoundException;
-import com.homework.rockband_song_manager.models.DTOs.SongDTO;
-import com.homework.rockband_song_manager.models.entitties.SongEntitty;
-import com.homework.rockband_song_manager.repository.SongRepository;
+import com.final_project.rockband_pocket_manager.data_filters.SongSpecifications;
+import com.final_project.rockband_pocket_manager.exceptions.SongNotFoundException;
+import com.final_project.rockband_pocket_manager.models.DTOs.SongDTO;
+import com.final_project.rockband_pocket_manager.models.entitties.SongEntitty;
+import com.final_project.rockband_pocket_manager.repository.SongRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
