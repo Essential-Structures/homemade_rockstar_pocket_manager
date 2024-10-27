@@ -2,7 +2,7 @@ package com.homework.rockband_song_manager.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.homework.rockband_song_manager.data_filters.SongSpecifications;
-import com.homework.rockband_song_manager.exceptions.SongUnpersistException;
+import com.homework.rockband_song_manager.exceptions.SongNotFoundException;
 import com.homework.rockband_song_manager.models.DTOs.SongDTO;
 import com.homework.rockband_song_manager.models.entitties.SongEntitty;
 import com.homework.rockband_song_manager.repository.SongRepository;
@@ -33,6 +33,7 @@ public class SongServiceImpl implements SongServiceable {
         return objectMapper.convertValue(saved, SongDTO.class);
     }
 
+
     @Override
     public List<SongDTO> getSongsByCriteria(String title, Short yearOfRelease) {
         Specification<SongEntitty> specs = Specification.
@@ -48,9 +49,21 @@ public class SongServiceImpl implements SongServiceable {
     }
 
     @Override
+    public SongDTO updateSongName(Short id, String newSongName) {
+        SongEntitty songToUpdate =repository.findById(id).
+                orElseThrow(()->new SongNotFoundException("Song not found"));
+
+        songToUpdate.setName(newSongName);
+        SongEntitty updatedSong = repository.save(songToUpdate);
+        log.info("Updated name in song with id {}",id);
+
+        return objectMapper.convertValue(updatedSong, SongDTO.class);
+    }
+
+    @Override
     public void deleteSongById(Short id) {
         repository.findById(id).orElseThrow(
-                ()->new SongUnpersistException("Song with id "+id+" set to delete not found in database"));
+                ()->new SongNotFoundException("Song with id "+id+" set to delete not found in database"));
 
         repository.deleteById(id);
         log.info("Successfully deleted song with id {}",id);

@@ -32,8 +32,8 @@ public class ExceptionHandleAdvizor {
     }
 
     //method to handle song not found exceptions
-    @ExceptionHandler(SongUnpersistException.class)
-    public ResponseEntity<String> songUnpersistException(SongUnpersistException songUnpersistException) {
+    @ExceptionHandler(SongNotFoundException.class)
+    public ResponseEntity<String> songUnpersistException(SongNotFoundException songUnpersistException) {
         return new ResponseEntity<>(
                 objectToString(Map.of("Invalid input data: ", songUnpersistException.getMessage())),
                 HttpStatus.NOT_FOUND);

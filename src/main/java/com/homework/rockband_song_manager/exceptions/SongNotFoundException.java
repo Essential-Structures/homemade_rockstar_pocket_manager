@@ -3,9 +3,9 @@ package com.homework.rockband_song_manager.exceptions;
 import lombok.Data;
 
 @Data
-public class SongUnpersistException extends RuntimeException {
+public class SongNotFoundException extends RuntimeException {
 
-    public SongUnpersistException(String message) {
+    public SongNotFoundException(String message) {
         super(message);
     }
 }

@@ -1,6 +1,7 @@
 package com.homework.rockband_song_manager.controllers;
 
 import com.homework.rockband_song_manager.models.DTOs.SongDTO;
+import com.homework.rockband_song_manager.models.DTOs.SongNameDTO;
 import com.homework.rockband_song_manager.services.SongServiceable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,9 +34,18 @@ public class SongController {
         return ResponseEntity.ok(songService.getSongsByCriteria(songName, yearOfRelease));
     }
 
-    @DeleteMapping ("/{ID}")
-    public void deleteSongbyId (@RequestParam(value = "ID") Short ID){
+    @PatchMapping("/{id}")
+    public ResponseEntity<SongDTO> updateSongName (@RequestBody SongNameDTO newSongName,
+                                                   @PathVariable ("id") Short id){
+        return new ResponseEntity<>(songService.updateSongName(id,newSongName.getNewSongName()),
+                HttpStatus.OK);
 
+    }
+
+    @DeleteMapping ("/{id}")
+    public ResponseEntity<Void> deleteSongbyId (@PathVariable Short id){
+        songService.deleteSongById(id);
+        return ResponseEntity.noContent().build();
 
     }
 }
